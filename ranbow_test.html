@@ -1,0 +1,21 @@
+<HEAD>
+  <title>INCOMING TRANSMISSION!</title>
+</HEAD>
+<BODY>
+  <p id=rainbow></p>
+  <script>
+var bob = function(){
+    var board = document.getElementById('rainbow');
+    for(x = 0; x < 5500; x++){
+      var tmp = document.createElement('a');
+      tmp.style.color = randomColor(); // assign color to temp element
+      tmp.innerHTML += String.fromCharCode(Math.random() * (11500 - 134) + 134); // sample random char codes above lower ascii
+      board.append(tmp);
+    }
+}
+function randomColor(){
+  return "#"+ (Math.random() * (65535 - 1000) + 1000).toString(16).slice(-6); //random hex colors
+}
+bob()
+  </script>
+</BODY>
